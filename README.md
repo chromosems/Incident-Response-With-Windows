@@ -35,19 +35,13 @@ Process Tree,Network Connections,Signature Status
 
 - ASSESSING ATTACK PERSISTENCE
   
--A method that is commonly used by attackers to maintain persistence is to create users. In fact, maintaining persistence is not the only reason why this is conducted. We observe that when attacker(s) take control of the “Administrator” account, they create new users. Because this is an important user, and its activity may be regularly tracked. Thus, they create a new user that will not attract a lot of attention and, if possible, they increase that user’s privileges.
+-A method that is commonly used by attackers to maintain persistence is to create users. In fact, maintaining persistence is not the only reason why this is conducted. We observe that when attacker(s) take control of the “Administrator” account, they create new users. Because this is an important user, and its activity may be regularly tracked. Thus, they create a new user that will not attract a lot of attention and, if possible, they increase that user’s privileges.The users that are created usually include keywords like “support”, “sysadmin”, “admin”. In most companies, users with names like these will not attract much attention.During an incident response procedure, there are 2 things that we must quickly evaluate.Is there currently a user in the system that should not be there?Has a user been created during the attack and deleted after that?
 
-The users that are created usually include keywords like “support”, “sysadmin”, “admin”. In most companies, users with names like these will not attract much attention.
-
-During an incident response procedure, there are 2 things that we must quickly evaluate.
-
-Is there currently a user in the system that should not be there?
-Has a user been created during the attack and deleted after that?
 -To list the currently active users in the system, we can use the “net user” command via cmd
--<img width="666" alt="image" src="https://github.com/chromosems/Incident-Response-With-Windows/assets/44053943/8d0909a4-2c30-4449-b53b-3a9c5a8c16e8">
+- <img width="666" alt="image" src="https://github.com/chromosems/Incident-Response-With-Windows/assets/44053943/8d0909a4-2c30-4449-b53b-3a9c5a8c16e8">
 -As a result, if there is a user that should not be there and we need more detailed information regarding this specific user, we can conduct a search my typing “net user USERNAME”.
--<img width="517" alt="image" src="https://github.com/chromosems/Incident-Response-With-Windows/assets/44053943/ebfd4d15-c4ce-42c8-b274-2cacdfdd220e">
--In this example, if the “Last logon” and “Password last set” values are paired with the time of the attack, we can approach the situation with suspicion.
+- <img width="517" alt="image" src="https://github.com/chromosems/Incident-Response-With-Windows/assets/44053943/ebfd4d15-c4ce-42c8-b274-2cacdfdd220e">
+- In this example, if the “Last logon” and “Password last set” values are paired with the time of the attack, we can approach the situation with suspicion.
 
 
 
