@@ -43,6 +43,19 @@ Process Tree,Network Connections,Signature Status
 - <img width="517" alt="image" src="https://github.com/chromosems/Incident-Response-With-Windows/assets/44053943/ebfd4d15-c4ce-42c8-b274-2cacdfdd220e">
 - In this example, if the “Last logon” and “Password last set” values are paired with the time of the attack, we can approach the situation with suspicion.
 
+-One of the most used persistence methods is to create scheduled tasks. Most malicious things from viruses to ransomware use scheduled tasks to maintain persistence. The attacker, by using scheduled tasks, ensures that the malicious file runs at regular intervals. Thus, the attacker ensures that the commands he/she wants to run are run actively and regularly.
+-With autoruns tool, commonly permanence tricks used by attackers like startup,schedule task.
+-<img width="848" alt="image" src="https://github.com/chromosems/Incident-Response-With-Windows/assets/44053943/673cc0fb-ab57-42ae-b28b-32a68077319e">
+-In order to conduct an initial elimination, we can start with scheduled tasks that do not have a “Publisher”. The fact that there is a publisher does not make it completely trustworthy, however, it is a higher probability that suspicious tasks do not have publishers.
+-<img width="594" alt="image" src="https://github.com/chromosems/Incident-Response-With-Windows/assets/44053943/e66cef9c-7666-49fb-994b-1383fed52f7f">
+-Next, analyzing the file path for the image above, notice important.bat the file is examined for daily update, openning the file
+-<img width="195" alt="image" src="https://github.com/chromosems/Incident-Response-With-Windows/assets/44053943/5d5f8674-c0ae-4169-abb7-4a2f3da68eb4">
+-Thus, we see that the actual goal of the attacker is to create a user named “User123” and add it to a relevant group for it to be able to run an RDP. The attacker chose not to do this manually by hand, but with a scheduled task
+
+
+
+
+
 
 
 
